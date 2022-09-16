@@ -10,9 +10,16 @@ type Props = {
 const HelmetHandler: React.FC<Props> = ({title, description, meta = []}) => {
     return (
         <HelmetProvider>
-            <Helmet 
+            <Helmet>
+                <title>{title}</title>
+                <meta name="description" content={description} />
+                <meta property="og:type" content="website"/>
+                <meta property="og:title" content={title}/>
+                <meta property="og:description" content={description}/>
+                <meta property="og:site_name" content='ReactSimpleApp'/>
+            </Helmet>
+            {/* <Helmet 
                 title = {title}
-                htmlAttributes={{ lang: "en" }}
                 meta={[
                     { name: `description`, content: description },
                     { property: `og:type`, content: 'website' },
@@ -21,7 +28,7 @@ const HelmetHandler: React.FC<Props> = ({title, description, meta = []}) => {
                     { property: `og:description`, content: description },
                     { property: `og:site_name`, content: 'ReactSimpleApp'}
                 ]}
-            />
+            /> */}
         </HelmetProvider>
     );
 }
