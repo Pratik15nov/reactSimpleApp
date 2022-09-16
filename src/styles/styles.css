@@ -1,0 +1,29 @@
+/*
+* ARK PES stylesheet
+**/
+@font-face {
+  font-family: "PublicSans";
+  src: local("PublicSans"), url(../styles/fonts/PublicSans-VariableFont.ttf) format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "NotoSans";
+  src: local("NotoSans"), url(../styles/fonts/NotoSans-Regular.ttf) format("truetype");
+  font-display: swap;
+}
+html {
+  box-sizing: border-box;
+  font-family: PublicSans;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 0;
+  font-family: PublicSans;
+  color: #383842;
+  font-size: 16px;
+}

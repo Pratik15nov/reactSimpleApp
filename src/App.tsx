@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import React from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import FallbackScreen from './components/Fallback/FallbackScreen';
+import { AppProvider } from "./core/context/appContextProvider";
+import NavBarProvider from "./core/context/navbarContext";
+import Home from './pages/Home/Home';
+import PrivateRoute from './core/routing/PrivateRoute';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppProvider>
+        <ErrorBoundary FallbackComponent={FallbackScreen}>
+          <NavBarProvider>
+            <Switch>
+              <PrivateRoute exact path="/" component={Home} redirectPath="/" />
+              <Route path="*" component={FallbackScreen} />
+            </Switch>
+          </NavBarProvider>
+        </ErrorBoundary>
+      </AppProvider>
+    </Router>
   );
 }
 
