@@ -16,7 +16,7 @@ const HelmetHandler: React.FC<Props> = ({title, description, meta = []}) => {
                 meta={[
                     { name: `description`, content: description },
                     { property: `og:type`, content: 'website' },
-                    { property: `og:url`, content: 'https://www.digitalvichar.com/' },
+                    { property: `og:url`, content: 'https://63246a006544053831129660--golden-tapioca-8159ec.netlify.app/' },
                     { property: `og:title`, content: title },
                     { property: `og:description`, content: description },
                     { property: `og:site_name`, content: 'ReactSimpleApp'}
